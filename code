@@ -1,0 +1,32 @@
+coordinate-gen
+==============
+import java.util.Random;
+
+public class Tunnel {
+	
+	public static void main(String[] args) {
+	
+		
+	Random random = new Random();
+	double  MY, MX, r, q;
+	int	 bias,low, high;
+	bias = 32;
+	low = 26;
+	high = 55;
+	r = random.nextDouble();
+	System.out.println(r);
+	if(r <= 0.7){
+			q = Math.pow(bias, r);
+			MY = low + q;
+		double Y = Math.round(MY * 100) / 100;
+		System.out.print("Y = ");
+		System.out.println(Y);
+	}else{
+			q = Math.pow(bias, r);
+			MX = high - q;
+		double X = Math.round(MX * 100) / 100;
+		System.out.print("X = ");
+		System.out.println(X);
+		}
+	}
+}
