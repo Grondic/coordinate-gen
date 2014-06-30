@@ -8,25 +8,26 @@ public class Tunnel {
 	
 		
 	Random random = new Random();
-	double  MY, MX, r, q;
+	double  MX, r, q; /*MX is the X variable the is worked out
+				r is random variable which is then used in q
+				q is bias^r which is then added onto or taken away from the lowest and highest values*/
 	int	 bias,low, high;
 	bias = 32;
 	low = 26;
 	high = 55;
 	r = random.nextDouble();
-	System.out.println(r);
-	if(r <= 0.7){
+	if(r <= 0.7){		//if r is less than 0.7 it will add q to low
 			q = Math.pow(bias, r);
-			MY = low + q;
-		double Y = Math.round(MY * 100) / 100;
-		System.out.print("Y = ");
-		System.out.println(Y);
-	}else{
+			MX = low + q;
+		double Y = Math.round(MX * 100) / 100;
+		System.out.print("X = ");
+		System.out.println(X);
+	}else{			//if r is greater than 0.7 it will taken q away from low
 			q = Math.pow(bias, r);
 			MX = high - q;
 		double X = Math.round(MX * 100) / 100;
 		System.out.print("X = ");
-		System.out.println(X);
+		System.out.println(X); //tells you the value of x that is coordinate
 		}
 	}
 }
